@@ -1,6 +1,7 @@
-# APIGateway enlance: https://apigateway-p29.herokuapp.com/
-#User: 
+#  [APIGateway](https://apigateway-p29.herokuapp.com/) ![GraphQL](https://cdn.iconscout.com/icon/free/png-256/graphql-3521468-2944912.png)
+- ## User: 
 
+```
 mutation{
   newUser(
     firstname: String
@@ -14,6 +15,8 @@ mutation{
     access
   }
 }
+```
+```
 mutation{
   loginUser(
     username:  String
@@ -23,25 +26,31 @@ mutation{
     access 
   }
 }
+```
+```
 mutation{
   refreshToken ( refresh :String) {
     access
   }
 }
+```
+```
 query{
   userById(id:Int ){
     id
     email
   }
 }
+```
+```
 query{
   users{
     id
     isadmi
   }
 }
-
-
+```
+```
 mutation{
   updateUser(
     id:
@@ -55,14 +64,17 @@ mutation{
     message
   }
 }
+```
+```
 mutation{
   deleteUser(id: Int){
     message
   }
 }
+```
 
-# Producto: 
-
+- ## Producto: 
+```
 mutation{
 newProduct(
   id:  String,
@@ -74,12 +86,16 @@ newProduct(
       productName
 }
 }
+```
+```
 query{
   productById(id: String){
     productName
     basePrice
   }
 }
+```
+```
 mutation{
   newProductWithAuction(
     id : String
@@ -93,6 +109,8 @@ mutation{
 
   }
 }
+```
+```
 mutation{
   deleteProductAuction(
     id_product:  String
@@ -101,9 +119,10 @@ mutation{
     message
   }
 }
+```
 
-#Subasta:
-
+- ## Subasta:
+```
 mutation  {
   newAuction(
     product:String
@@ -115,25 +134,33 @@ mutation  {
     message
   }
 }
+```
+```
 query{
   auctions{
     auction_id
   }
 }
+```
+```
 query{
   auctionById(id: Int){
     auction_id
     product
   }
 }
+```
+```
 mutation{
   deleteAuction(id:Int) {
     message
   }
 }
+```
 
 
-#Licitaciones o pujas:
+- ## Licitaciones o pujas:
+```
 query{
   bids{
     auction
@@ -142,6 +169,8 @@ query{
     offer
   }
 }
+```
+```
 query{
   bidByUser(
     user:Int
@@ -151,6 +180,8 @@ query{
     offer
   }
 }
+```
+```
 query {
   bidByUserAuction (
     user: Int
@@ -161,6 +192,8 @@ query {
     offer
   }
 }
+```
+```
 mutation{newBid(
  
   user:Int
@@ -170,6 +203,8 @@ mutation{newBid(
 message
 }
 }
+```
+```
 mutation{deleteBid(
   user:Int
   auction:Int
@@ -177,3 +212,4 @@ mutation{deleteBid(
   message
 }
 }
+```
